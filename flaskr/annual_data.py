@@ -18,7 +18,7 @@ def get_data():
 
         quarter = list(map(int, q.split(',')))
         filtered_df = df[(df['API WELL  NUMBER'] == int(well_number)) & (df['QUARTER 1,2,3,4'].isin(quarter))]
-        nw = filtered_df.groupby("API WELL  NUMBER")[["OIL", "GAS", "BRINE"]].sum ()
+        nw = filtered_df.groupby("API WELL  NUMBER")[["OIL", "GAS", "BRINE"]].sum()
 
         oil = int(nw['OIL'].iloc[0])
         gas = int(nw['GAS'].iloc[0])
